@@ -5,7 +5,6 @@ import Sidebar from "@/components/sidebar";
 import { Toaster } from "@/components/ui/toaster";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
-import { SessionProvider } from "next-auth/react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,12 +30,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} flex`}>
-        {/* <pre>{JSON.stringify(session.user, null, 2)}</pre> */}
-        <SessionProvider session={session}>
-          <Sidebar />
-          <div className="p-6 w-full">{children}</div>
-          <Toaster />
-        </SessionProvider>
+        <Sidebar />
+        <div className="p-6 w-full">{children}</div>
+        <Toaster />
       </body>
     </html>
   );

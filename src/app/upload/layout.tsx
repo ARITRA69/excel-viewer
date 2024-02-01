@@ -1,5 +1,4 @@
 import Profile from "@/components/profile";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Bell, Github } from "lucide-react";
 import Link from "next/link";
 import React, { ReactNode } from "react";
